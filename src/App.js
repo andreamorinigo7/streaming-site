@@ -1,12 +1,21 @@
-import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
-import NavBar from "./NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NavBar from "./NavBar";
+import GetStarted from "./GetStarted";
+import Home from "./Home";
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
+      <Router>
+        <NavBar /> {/* This will appear on all pages */}
+        <Routes>
+          <Route path="/" element={<GetStarted />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
