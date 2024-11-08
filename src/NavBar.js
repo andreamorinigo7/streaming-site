@@ -18,8 +18,8 @@ export default function NavBar() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="#">TV Shows</Nav.Link>
-            <Nav.Link href="#">Movies</Nav.Link>
+            <Nav.Link href="/TvShow">TV Shows</Nav.Link>
+            <Nav.Link href="/Movies">Movies</Nav.Link>
             <Nav.Link href="#">Trending</Nav.Link>
             {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Trending</NavDropdown.Item>

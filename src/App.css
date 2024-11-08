@@ -29,3 +29,14 @@ body {
   color: var(--accent-color) !important;
   border: 1px solid var(--accent-color) !important;
 }
+
+.title-card-container {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.title-card-container .title-card {
+  margin-right: 10px; /* Optional spacing between cards */
+  flex: 0 0 auto; /* Prevents shrinking of cards */
+}
