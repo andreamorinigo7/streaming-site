@@ -30,6 +30,10 @@ body {
   border: 1px solid var(--accent-color) !important;
 }
 
+.grid-container h4 {
+  margin: 7px;
+}
+
 .title-card-container {
   display: flex;
   overflow-x: auto;
