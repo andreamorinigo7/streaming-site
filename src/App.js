@@ -10,9 +10,8 @@ function App() {
   return (
     <div className="grid-container">
       <Router>
-        <NavBar /> {/* appear on all pages */}
+        <NavBar />
         <Routes>
-          <Route path="/" element={<GetStarted />} />
           <Route path="/home" element={<Home />} />
         </Routes>
       </Router>
