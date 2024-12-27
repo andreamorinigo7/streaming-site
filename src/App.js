@@ -3,10 +3,8 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./NavBar";
-import GetStarted from "./GetStarted";
 import Home from "./Home";
-import TvShow from "./TvShow";
-import Movies from "./Movies";
+import GetStarted from "./GetStarted";
 
 function App() {
   return (
@@ -16,15 +14,8 @@ function App() {
         <Routes>
           <Route path="/" element={<GetStarted />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/tvshow" element={<TvShow />} />
         </Routes>
       </Router>
-      <br />
-      <h4>Mystery</h4>
-      <Home />
-      <br />
-      <Home />
     </div>
   );
 }
