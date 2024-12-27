@@ -2,9 +2,8 @@ import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NavBar from "./NavBar";
-import Home from "./Home";
-import GetStarted from "./GetStarted";
+import NavBar from "./component/NavBar";
+import Home from "./component/Home";
 
 function App() {
   return (
