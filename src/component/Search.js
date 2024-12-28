@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Search.css";
 
-export default function search() {
+export default function Search() {
   return (
     <div>
       <form>
-        <input type="search" />
+        <input type="text" placeholder="Search for an anime..." />
       </form>
     </div>
   );
