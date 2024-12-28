@@ -7,15 +7,15 @@ import Search from "./Search";
 
 export default function NavBar() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary navbar-custom" sticky="top">
+    <Navbar expand="lg" className="bg-body-tertiary" sticky="top">
       <Container>
-        <Navbar.Brand href="#home">Anime</Navbar.Brand>
+        <Navbar.Brand href="/home">Anime</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             {" "}
-            <Nav.Link href="#home">Top Anime</Nav.Link>
-            <Nav.Link href="#link">Streaming Now</Nav.Link>
+            <Nav.Link href="/TopAnime">Top Anime</Nav.Link>
+            <Nav.Link href="/NowStreaming">Streaming Now</Nav.Link>
           </Nav>
           <Search />
         </Navbar.Collapse>
