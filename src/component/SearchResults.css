@@ -1,0 +1,37 @@
+.results-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.anime-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.anime-card:hover {
+  transform: scale(1.05);
+}
+
+.anime-image {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  text-transform: capitalize;
+  text-decoration: none;
+  line-height: 20px;
+  padding: 5px;
+}

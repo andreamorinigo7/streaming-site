@@ -12,8 +12,9 @@ import Home from "./component/Home";
 import NowStreaming from "./component/NowStreaming";
 import AnimeDetails from "./component/AnimeDetails";
 import TopAnime from "./component/TopAnime";
+import SearchResults from "./component/SearchResults";
 
-function App() {
+export default function App() {
   return (
     <div className="grid-container">
       <Router>
@@ -24,10 +25,9 @@ function App() {
           <Route path="/TopAnime" element={<TopAnime />} />
           <Route path="/NowStreaming" element={<NowStreaming />} />
           <Route path="/anime/:id" element={<AnimeDetails />} />
+          <Route path="/results" element={<SearchResults />} />{" "}
         </Routes>
       </Router>
     </div>
   );
 }
-
-export default App;

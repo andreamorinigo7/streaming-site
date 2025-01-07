@@ -4,15 +4,20 @@ import "./SearchResults.css";
 
 export default function SearchResults() {
   const location = useLocation();
-  let results = location.state?.results || [];
+  const results = location.state?.results || [];
+
   if (results.length === 0) {
-    return <div>No results found.</div>;
+    return <div>No results found. Please try another search.</div>;
   }
 
   return (
-    <div>
+    <div className="results-container">
       {results.map((anime) => (
-        <Link to={`/anime/$anime.mal_id`} key={anime.mal_id}>
+        <Link
+          to={`/anime/${anime.mal_id}`}
+          key={anime.mal_id}
+          className="anime-card"
+        >
           <img src={anime.images.jpg.image_url} alt={anime.title} />
           <h3>{anime.title}</h3>
         </Link>
