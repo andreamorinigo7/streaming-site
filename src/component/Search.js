@@ -10,6 +10,7 @@ export default function Search() {
 
   function handleResponse(response) {
     setResults(response.data.data);
+    navigate("/results", { state: { results } });
   }
   function handleSearchResults(event) {
     setQuery(event.target.value);
@@ -47,7 +48,6 @@ export default function Search() {
           <div
             key={anime.mal_id}
             onClick={() => handleResultClick(anime.mal_id)}
-            style={{ cursor: "pointer" }}
           >
             {anime.title}
           </div>
