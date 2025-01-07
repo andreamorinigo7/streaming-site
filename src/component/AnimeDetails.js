@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import "./AnimeDetails.css";
 
 export default function AnimeDetails() {
   const [anime, setAnime] = useState("");
@@ -32,20 +33,28 @@ export default function AnimeDetails() {
 
   return (
     <div>
-      <div className="row">
+      <div className="row anime-details">
         <div className="col-6">
           <h1>{anime.title}</h1>
-          <p>EPISODES: {anime.episodes || "N/A"}</p>
+          <p>
+            <strong>EPISODES:</strong> {anime.episodes || "N/A"}
+          </p>
           <p>{anime.synopsis || "No synopsis available."}</p>
           <ul>
-            <li>AIRED ON: {anime.aired?.string || "N/A"}</li>
-            <li>SCORE: {anime.score || "N/A"}</li>
-            <li>STATUS: {anime.status || "N/A"}</li>
+            <li>
+              <strong>AIRED ON:</strong> {anime.aired?.string || "N/A"}
+            </li>
+            <li>
+              <strong>SCORE:</strong> {anime.score || "N/A"}
+            </li>
+            <li>
+              <strong>STATUS:</strong> {anime.status || "N/A"}
+            </li>
+            <li>
+              <strong>GENRE:</strong>{" "}
+              {anime.genres?.map((genre) => genre.name).join(", ") || "N/A"}
+            </li>
           </ul>
-          <span>
-            GENRE:{" "}
-            {anime.genres?.map((genre) => genre.name).join(", ") || "N/A"}
-          </span>
         </div>
         <div className="col-6">
           <img
