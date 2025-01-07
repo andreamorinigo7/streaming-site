@@ -7,7 +7,6 @@
 }
 
 .anime-details .col-6 {
-  max-width: 100%;
   flex: 1;
   padding: 30px;
   max-width: 600px;
@@ -26,6 +25,16 @@
 
 .anime-details ul li {
   margin-bottom: 10px;
+}
+
+.details-trailer h1 {
+  max-width: 600px;
+  padding-left: 470px;
+}
+
+iframe {
+  display: block;
+  margin: 40px auto;
 }
 
 @media (max-width: 768px) {

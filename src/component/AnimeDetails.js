@@ -36,6 +36,10 @@ export default function AnimeDetails() {
       <div className="row anime-details">
         <div className="col-6">
           <h1>{anime.title}</h1>
+
+          <p className="ps-3 text-muted">
+            {anime.title_japanese} | <em>{anime.title_english}</em>
+          </p>
           <p>
             <strong>EPISODES:</strong> {anime.episodes || "N/A"}
           </p>
@@ -45,10 +49,16 @@ export default function AnimeDetails() {
               <strong>AIRED ON:</strong> {anime.aired?.string || "N/A"}
             </li>
             <li>
+              <strong>Broadcast:</strong> {anime.broadcast.string || "N/A"}
+            </li>
+            <li>
               <strong>SCORE:</strong> {anime.score || "N/A"}
             </li>
             <li>
               <strong>STATUS:</strong> {anime.status || "N/A"}
+            </li>
+            <li>
+              <strong>STUDIO:</strong> {anime.studios?.[0]?.name || "N/A"}
             </li>
             <li>
               <strong>GENRE:</strong>{" "}
@@ -62,6 +72,17 @@ export default function AnimeDetails() {
             alt={anime.title || "N/A"}
           />
         </div>
+      </div>
+      <div className="details-trailer">
+        <h1>Trailer</h1>
+        <iframe
+          width="760"
+          height="515"
+          src={anime.trailer.embed_url}
+          title="Anime Trailer"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
       </div>
     </div>
   );
