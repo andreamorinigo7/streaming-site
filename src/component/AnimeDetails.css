@@ -1,9 +1,20 @@
 .anime-details {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 40px 20px;
   min-height: 100vh;
+}
+
+.anime-details .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  gap: 20px;
 }
 
 .anime-details .col-6 {
@@ -27,20 +38,21 @@
   margin-bottom: 10px;
 }
 
-.details-trailer h1 {
-  max-width: 600px;
-  padding-left: 470px;
-}
-
 iframe {
   display: block;
   margin: 40px auto;
+  max-width: 100%;
 }
 
 @media (max-width: 768px) {
-  .anime-details {
+  .anime-details .row {
     flex-direction: column;
     text-align: center;
+  }
+
+  .anime-details img {
+    max-width: 100%;
+    height: auto;
   }
 
   .anime-details .col-6 {

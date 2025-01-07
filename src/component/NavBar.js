@@ -7,7 +7,7 @@ import Search from "./Search";
 
 export default function NavBar() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary" sticky="top">
+    <Navbar expand="lg" className="bg-body-tertiary" sticky="fixed">
       <Container>
         <Navbar.Brand href="/home">Anime</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

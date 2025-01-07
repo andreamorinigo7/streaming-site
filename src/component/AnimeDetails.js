@@ -32,8 +32,8 @@ export default function AnimeDetails() {
   }
 
   return (
-    <div>
-      <div className="row anime-details">
+    <div className="anime-details">
+      <div className="row ">
         <div className="col-6">
           <h1>{anime.title}</h1>
 
@@ -72,17 +72,21 @@ export default function AnimeDetails() {
             alt={anime.title || "N/A"}
           />
         </div>
-      </div>
-      <div className="details-trailer">
-        <h1>Trailer</h1>
-        <iframe
-          width="760"
-          height="515"
-          src={anime.trailer.embed_url}
-          title="Anime Trailer"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+        <div className="details-trailer">
+          <h1>Trailer</h1>
+          {anime.trailer?.embed_url ? (
+            <iframe
+              width="560"
+              height="315"
+              src={anime.trailer.embed_url}
+              title="Anime Trailer"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          ) : (
+            <p>No trailer available.</p>
+          )}
+        </div>
       </div>
     </div>
   );
