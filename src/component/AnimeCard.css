@@ -1,0 +1,20 @@
+.anime-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.anime-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.anime-card h2 {
+  margin-top: 10px;
+  text-align: center;
+}

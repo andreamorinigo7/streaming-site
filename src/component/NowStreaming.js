@@ -3,7 +3,7 @@ import axios from "axios";
 import AnimeCard from "./AnimeCard";
 
 export default function NowStreaming() {
-  const [streaming, setStreaming] = useState("");
+  const [streaming, setStreaming] = useState([]);
 
   useEffect(() => {
     axios

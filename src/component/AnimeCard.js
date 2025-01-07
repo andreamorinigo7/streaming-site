@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "./AnimeCard.css";
 
 export default function AnimeCard({ anime }) {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ export default function AnimeCard({ anime }) {
 
   return (
     <div>
-      <div onClick={handleClick}>
+      <div className="anime-card" onClick={handleClick}>
         <img src={anime.images.jpg.image_url} alt={anime.title} />
         <h2>{anime.title}</h2>
       </div>

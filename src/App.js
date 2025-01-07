@@ -1,7 +1,12 @@
 import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import NavBar from "./component/NavBar";
 import Home from "./component/Home";
 import NowStreaming from "./component/NowStreaming";
@@ -14,10 +19,11 @@ function App() {
       <Router>
         <NavBar />
         <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
           <Route path="/TopAnime" element={<TopAnime />} />
-          <Route path="/now-streaming" component={NowStreaming} />
-          <Route path="/anime/:id" component={AnimeDetails} />
+          <Route path="/NowStreaming" element={<NowStreaming />} />
+          <Route path="/anime/:id" element={<AnimeDetails />} />
         </Routes>
       </Router>
     </div>

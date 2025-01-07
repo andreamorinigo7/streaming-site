@@ -3,7 +3,7 @@ import AnimeCard from "./AnimeCard";
 import axios from "axios";
 
 export default function TopAnime() {
-  const [topAnimes, setTopAnimes] = useState("");
+  const [topAnimes, setTopAnimes] = useState([]);
 
   useEffect(() => {
     axios
