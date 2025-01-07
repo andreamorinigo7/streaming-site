@@ -3,6 +3,7 @@ import { useLocation, Link } from "react-router-dom";
 import "./SearchResults.css";
 
 export default function SearchResults() {
+  const location = useLocation();
   let results = location.state?.results || [];
   if (results.length === 0) {
     return <div>No results found.</div>;
