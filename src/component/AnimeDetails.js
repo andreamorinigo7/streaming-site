@@ -9,7 +9,6 @@ export default function AnimeDetails() {
 
   useEffect(() => {
     setLoading(true);
-
     axios
       .get(`https://api.jikan.moe/v4/anime/${id}`)
       .then((response) => {
@@ -23,34 +22,38 @@ export default function AnimeDetails() {
       });
   }, [id]);
 
-  if (!anime && !loading) {
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!anime) {
     return <div>Error fetching details. Please try again later.</div>;
-  } else {
-    return (
-      <div>
-        <div className="row">
-          <div className="col-6">
-            <h1>{anime.title}</h1>
-            <p> EPISODES: {anime.episodes || "N/A"}</p>
-            <p>{anime.synopsis}</p>
-            <ul>
-              <li>AIRED ON:{anime.aired.string || "N/A"}</li>
-              <li>SCORE:{anime.score || "N/A"}</li>
-              <li>STATUS:{anime.status || "N/A"}</li>
-            </ul>
+  }
 
-            <span>
-              {" "}
-              GENRE:{" "}
-              {anime.genres.map((genre) => genre.name).join(", ") || "N/A"}
-            </span>
-          </div>
-
-          <div className="col-6">
-            <img src={anime.images.jpg.image_url} alt={anime.title} />
-          </div>
+  return (
+    <div>
+      <div className="row">
+        <div className="col-6">
+          <h1>{anime.title}</h1>
+          <p>EPISODES: {anime.episodes || "N/A"}</p>
+          <p>{anime.synopsis || "No synopsis available."}</p>
+          <ul>
+            <li>AIRED ON: {anime.aired?.string || "N/A"}</li>
+            <li>SCORE: {anime.score || "N/A"}</li>
+            <li>STATUS: {anime.status || "N/A"}</li>
+          </ul>
+          <span>
+            GENRE:{" "}
+            {anime.genres?.map((genre) => genre.name).join(", ") || "N/A"}
+          </span>
+        </div>
+        <div className="col-6">
+          <img
+            src={anime.images?.jpg?.image_url || ""}
+            alt={anime.title || "N/A"}
+          />
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
